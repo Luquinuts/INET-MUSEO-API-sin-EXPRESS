@@ -136,9 +136,9 @@ const server = http.createServer(function(req, res) {
       req.params = JSON.parse(JSON.stringify(parsedURL.query));
   });
   req.on("end", _ => {
-    const route = SetRoute();
-    const routeA = SetRoute();
-    
+    const route = SetRoute(router);
+    const routeA = SetRoute(routerA);
+
     route(req, res);
     routeA(req, res);
     console.log(routeA);
